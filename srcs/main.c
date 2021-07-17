@@ -6,7 +6,7 @@
 /*   By: cpereira <cpereira@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/27 00:08:11 by cpereira          #+#    #+#             */
-/*   Updated: 2021/07/15 19:12:33 by cpereira         ###   ########.fr       */
+/*   Updated: 2021/07/16 17:55:16 by cpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,37 @@ void	reset_flags(t_all *all, int argc)
 	ft_bzero(all->vector_b, argc);
 }
 
+int	verify_args(t_all *all, int argc, char **argv)
+{
+	int	j;
+	int	i;
+	int	num;
+
+	i = 1;
+	while (i < argc)
+	{
+		j = 0;
+		while (j < (int)ft_strlen(argv[i]))
+		{
+			if (!ft_isdigit(argv[i][j]) && argv[i][0] != '-')
+				return (1);
+			j++;
+		}
+		if (argv[i][0] == '-')
+			num = ft_atoi(&argv[i][1]) * -1;
+		else
+			num = ft_atoi(&argv[i][0]);
+		if (checker_num(all, num))
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
 int	main(int argc, char **argv)
 {
 	t_all	all;
 	int		i;
-	int		n;
 
 	if (argc == 1)
 	{
@@ -39,46 +65,17 @@ int	main(int argc, char **argv)
 	if (all.vector_a == 0 || all.vector_b == 0)
 		return (0);
 	i = 1;
-
-	// Fazer tratamento de erros e remover os prints
-	while(i < argc)
+	if (verify_args(&all, argc, argv))
 	{
-
-		i++;
-	}
-
-	return(0);
-	while (i < argc)
-	{
-		if (argv[i][0] == '-')
-			n = ft_atoi(&argv[i][1]);
-		else
-			n = ft_atoi(&argv[i][0]);
-		if ((n != 0 || argv[i][0] == '0') && ft_strlen(argv[i]) == size_num(n))
-		{
-			if (checker_num(&all, n))
-			{
-				printf("Duplicado\n");
-				bye(&all);
-			}
-		}
-		else
-		{
-			printf("Invalid args\n");
-			bye(&all);
-		}
-		i++;
+		printf("invalidos\n");
+		return (0);
 	}
 	while (all.qtt_a > 3 && verify_a(&all))
 		find_first_second (&all);
 	order_3(&all);
 	if (all.qtt_a < all.qtt_t)
-	{
 		org_a(&all);
-		back_a(&all);
-	}
 	print_f(&all);
-	bye(&all);
 	return (0);
 }
 

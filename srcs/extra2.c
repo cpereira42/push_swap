@@ -6,7 +6,7 @@
 /*   By: cpereira <cpereira@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 18:23:13 by cpereira          #+#    #+#             */
-/*   Updated: 2021/07/15 18:41:21 by cpereira         ###   ########.fr       */
+/*   Updated: 2021/07/15 20:46:20 by cpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	move_top(t_all *all, int posic, int mv)
 	return (mv - 1);
 }
 
-void	find_first_second (t_all *all)
+void	find_first_second(t_all *all)
 {
 	int	i;
 

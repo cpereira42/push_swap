@@ -6,7 +6,7 @@
 /*   By: cpereira <cpereira@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 18:18:03 by cpereira          #+#    #+#             */
-/*   Updated: 2021/07/15 18:22:43 by cpereira         ###   ########.fr       */
+/*   Updated: 2021/07/16 17:51:22 by cpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	org_a(t_all *all)
 		all->vector_a[all->qtt_t - i - 1] = all->vector_a[all->qtt_a - i - 1];
 		i++;
 	}
+	back_a(all);
 }
 
 void	kill_a(t_all *all)
@@ -39,12 +40,11 @@ void	kill_a(t_all *all)
 	all->vector_a[i - 1] = aux;
 }
 
-void	bye (t_all *all)
+void	bye(t_all *all)
 {
 	free(all->vector_a);
 	if (all->vector_b)
 		free(all->vector_b);
-	exit(0);
 }
 
 void	push_b(t_all *all)

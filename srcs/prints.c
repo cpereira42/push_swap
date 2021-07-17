@@ -6,7 +6,7 @@
 /*   By: cpereira <cpereira@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 18:57:03 by cpereira          #+#    #+#             */
-/*   Updated: 2021/07/15 18:58:06 by cpereira         ###   ########.fr       */
+/*   Updated: 2021/07/16 17:52:05 by cpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	print_f(t_all *all)
 		printf ("%s\n", all->com[i]);
 		i++;
 	}
+	bye(all);
 }
 
 void	print_a(t_all *all)

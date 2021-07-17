@@ -6,7 +6,7 @@
 /*   By: cpereira <cpereira@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 01:19:17 by user42            #+#    #+#             */
-/*   Updated: 2021/07/15 19:00:13 by cpereira         ###   ########.fr       */
+/*   Updated: 2021/07/15 19:32:19 by cpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@
 # include <unistd.h>
 # include "libft.h"
 
+typedef struct		s_vect
+{
+	int				num;
+	struct s_vect	*next;
+}				t_vect;
 typedef struct s_all
 {
 	int		*vector_a;
@@ -57,5 +62,10 @@ void	find_diff(t_all*all);
 void	bye(t_all *all);
 size_t	size_num(int num);
 int		checker_num(t_all *all, int num);
+
+t_vect	*ft_lstnew2(int num);
+int		ft_lstsize2(t_vect *lst);
+void	ft_lstadd_back2(t_vect **lst, t_vect *new);
+t_vect	*ft_lstlast2(t_vect *lst);
 
 #endif
