@@ -6,7 +6,7 @@
 /*   By: cpereira <cpereira@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/31 01:19:17 by user42            #+#    #+#             */
-/*   Updated: 2021/07/15 19:32:19 by cpereira         ###   ########.fr       */
+/*   Updated: 2021/07/19 19:13:44 by cpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <string.h>
 # include <unistd.h>
 # include "libft.h"
+
+#define NUMX 10
 
 typedef struct		s_vect
 {
@@ -34,7 +36,8 @@ typedef struct s_all
 	int		qtt_t;
 	int		first_a;
 	int		second_a;
-	char*	com[500];
+	char*	com[50000];
+	int		num_posic[NUMX];
 	int		qtt_com;
 }				t_all;
 
@@ -46,7 +49,12 @@ void	r_r_a(t_all *all);
 void	r_r_b(t_all *all);
 int		verify_a(t_all *all);
 int		verify_a(t_all *all);
-void	find_first_second (t_all *all);
+void	number_hundred(t_all *all);
+void	number_hundred2(t_all *all);
+void 	find_x_number(t_all *all, int qtt);
+void	find_first_second(t_all *all);
+void	number_five(t_all *all);
+void	find_first(t_all *all);
 void	print_a (t_all *all);
 void	print_f (t_all *all);
 void	print_b (t_all *all);
@@ -62,10 +70,11 @@ void	find_diff(t_all*all);
 void	bye(t_all *all);
 size_t	size_num(int num);
 int		checker_num(t_all *all, int num);
-
+void	less_hun(t_all *all);
 t_vect	*ft_lstnew2(int num);
 int		ft_lstsize2(t_vect *lst);
 void	ft_lstadd_back2(t_vect **lst, t_vect *new);
 t_vect	*ft_lstlast2(t_vect *lst);
+void	more_hun(t_all *all);
 
 #endif

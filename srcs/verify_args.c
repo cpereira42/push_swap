@@ -6,7 +6,7 @@
 /*   By: cpereira <cpereira@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 18:46:58 by cpereira          #+#    #+#             */
-/*   Updated: 2021/07/15 18:47:37 by cpereira         ###   ########.fr       */
+/*   Updated: 2021/07/16 20:56:41 by cpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	checker_num(t_all *all, int num)
 	int	i;
 
 	i = 0;
+	if (num > 2147483647 || num < -2147483648)
+		return (1);
 	while (i < all->qtt_a)
 	{
 		if (all->vector_a[i] == num)

@@ -6,7 +6,7 @@
 /*   By: cpereira <cpereira@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 18:18:03 by cpereira          #+#    #+#             */
-/*   Updated: 2021/07/16 17:51:22 by cpereira         ###   ########.fr       */
+/*   Updated: 2021/07/19 18:49:37 by cpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,22 +22,24 @@ void	org_a(t_all *all)
 		all->vector_a[all->qtt_t - i - 1] = all->vector_a[all->qtt_a - i - 1];
 		i++;
 	}
-	back_a(all);
 }
 
 void	kill_a(t_all *all)
 {
-	int	aux;
+	//int	aux;
 	int	i;
 
 	i = 0;
-	aux = all->vector_a[i];
+	//aux = all->vector_a[i];
+	//print_a(all);
 	while (i < all->qtt_a)
 	{
 		all->vector_a[i] = all->vector_a[i + 1];
 		i++;
 	}
-	all->vector_a[i - 1] = aux;
+	//printf("after kill");
+	//print_a(all);
+	//all->vector_a[i - 1] = aux;
 }
 
 void	bye(t_all *all)
@@ -45,16 +47,20 @@ void	bye(t_all *all)
 	free(all->vector_a);
 	if (all->vector_b)
 		free(all->vector_b);
+	exit(0);
 }
 
 void	push_b(t_all *all)
 {
-	all->vector_b[all->qtt_b] = all->vector_a[0];
-	all->com[all->qtt_com] = ft_strdup("pb");
-	all->qtt_com++;
-	kill_a(all);
-	all->qtt_a--;
-	all->qtt_b++;
+	if (verify_a(all))
+	{
+		all->vector_b[all->qtt_b] = all->vector_a[0];
+		all->com[all->qtt_com] = ft_strdup("pb");
+		all->qtt_com++;
+		kill_a(all);
+		all->qtt_a--;
+		all->qtt_b++;
+	}
 }
 
 void	push_a(t_all *all)
@@ -64,13 +70,13 @@ void	push_a(t_all *all)
 	all->vector_a[all->qtt_b] = all->vector_b[all->qtt_b];
 	all->com[all->qtt_com] = ft_strdup("pa");
 	all->qtt_com++;
-	if (all->vector_a[all->qtt_b] > all->vector_a[all->qtt_b + 1])
+	if (all->vector_a[all->qtt_b] >= all->vector_a[all->qtt_b + 1])
 	{
 		aux = all->vector_a[all->qtt_b];
 		all->vector_a[all->qtt_b] = all->vector_a[all->qtt_b + 1];
 		all->vector_a[all->qtt_b + 1] = aux;
-		all->com[all->qtt_com] = ft_strdup("sa");
-		all->qtt_com++;
+		//all->com[all->qtt_com] = ft_strdup("sa");
+		//all->qtt_com++;
 	}
 	all->qtt_a++;
 	all->qtt_b--;

@@ -6,7 +6,7 @@
 #    By: cpereira <cpereira@student.42sp.org>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/06/27 00:08:05 by cpereira          #+#    #+#              #
-#    Updated: 2021/07/16 17:56:34 by cpereira         ###   ########.fr        #
+#    Updated: 2021/07/16 23:26:55 by cpereira         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRCS =	$(SDIR)main.c \
 		$(SDIR)extra2.c \
 		$(SDIR)command_r.c \
 		$(SDIR)verify_args.c \
+		$(SDIR)command_list.c \
 		$(SDIR)prints.c \
 		$(SDIR)command_s.c
 
