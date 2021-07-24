@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   extra.c                                            :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpereira <cpereira@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/15 18:18:03 by cpereira          #+#    #+#             */
-/*   Updated: 2021/07/23 19:27:43 by cpereira         ###   ########.fr       */
+/*   Created: 2020/01/29 18:55:21 by cpereira          #+#    #+#             */
+/*   Updated: 2021/07/23 20:20:32 by cpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <unistd.h>
+#include "libft.h"
 
-void	bye(t_all *all)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int	i;
+	unsigned int	numero;
 
-	i = 0;
-	free(all->vector_a);
-	free(all->vector_o);
-	if (all->vector_b)
-		free(all->vector_b);
-	exit(0);
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		numero = n * -1;
+	}
+	else
+		numero = n;
+	if (numero >= 10)
+		ft_putnbr_fd(numero / 10, fd);
+	ft_putchar_fd(numero % 10 + 48, fd);
 }

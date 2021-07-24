@@ -6,7 +6,7 @@
 /*   By: cpereira <cpereira@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/15 18:36:53 by cpereira          #+#    #+#             */
-/*   Updated: 2021/07/19 15:36:25 by cpereira         ###   ########.fr       */
+/*   Updated: 2021/07/23 19:16:47 by cpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	r_r_a(t_all *all)
 		i--;
 	}
 	all->vector_a[0] = aux;
-	all->com[all->qtt_com] = ft_strdup("rra");
+	all->com[all->qtt_com] = ft_strdup("rra\n");
 	all->qtt_com++;
 }
 
@@ -42,7 +42,7 @@ void	r_r_b(t_all *all)
 		i--;
 	}
 	all->vector_b[0] = aux;
-	all->com[all->qtt_com] = ft_strdup("rrb");
+	all->com[all->qtt_com] = ft_strdup("rrb\n");
 	all->qtt_com++;
 }
 
@@ -59,7 +59,7 @@ void	r_a(t_all *all)
 		i++;
 	}
 	all->vector_a[i - 1] = aux;
-	all->com[all->qtt_com] = ft_strdup("ra");
+	all->com[all->qtt_com] = ft_strdup("ra\n");
 	all->qtt_com++;
 }
 
@@ -76,6 +76,6 @@ void	r_b(t_all *all)
 		i++;
 	}
 	all->vector_b[i - 1] = aux;
-	all->com[all->qtt_com] = ft_strdup("rb");
+	all->com[all->qtt_com] = ft_strdup("rb\n");
 	all->qtt_com++;
 }

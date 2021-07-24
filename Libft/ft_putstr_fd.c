@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   extra.c                                            :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpereira <cpereira@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/15 18:18:03 by cpereira          #+#    #+#             */
-/*   Updated: 2021/07/23 19:27:43 by cpereira         ###   ########.fr       */
+/*   Created: 2020/01/29 18:44:14 by cpereira          #+#    #+#             */
+/*   Updated: 2021/07/23 20:18:32 by cpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <unistd.h>
 
-void	bye(t_all *all)
+void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
 	i = 0;
-	free(all->vector_a);
-	free(all->vector_o);
-	if (all->vector_b)
-		free(all->vector_b);
-	exit(0);
+	if (s != 0 && fd != 0)
+	{
+		while (s[i] != '\0')
+		{
+			write(fd, &s[i], 1);
+			i++;
+		}
+	}
 }

@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   extra.c                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpereira <cpereira@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/15 18:18:03 by cpereira          #+#    #+#             */
-/*   Updated: 2021/07/23 19:27:43 by cpereira         ###   ########.fr       */
+/*   Created: 2020/01/20 19:35:41 by cpereira          #+#    #+#             */
+/*   Updated: 2021/07/23 20:19:47 by cpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include <unistd.h>
 
-void	bye(t_all *all)
+size_t	ft_strlen(const char *frase)
 {
 	int	i;
 
 	i = 0;
-	free(all->vector_a);
-	free(all->vector_o);
-	if (all->vector_b)
-		free(all->vector_b);
-	exit(0);
+	while (frase[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }

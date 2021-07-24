@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   extra.c                                            :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpereira <cpereira@student.42sp.org>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/15 18:18:03 by cpereira          #+#    #+#             */
-/*   Updated: 2021/07/23 19:27:43 by cpereira         ###   ########.fr       */
+/*   Created: 2020/01/24 23:47:41 by cpereira          #+#    #+#             */
+/*   Updated: 2021/07/23 20:07:29 by cpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	bye(t_all *all)
+char	*ft_strdup(const char *s1)
 {
-	int	i;
+	size_t	t;
+	char	*cpy;
+	int		i;
 
+	t = ft_strlen(s1) + 1;
 	i = 0;
-	free(all->vector_a);
-	free(all->vector_o);
-	if (all->vector_b)
-		free(all->vector_b);
-	exit(0);
+	cpy = (char *)malloc(sizeof(char) * t);
+	if ((cpy))
+	{
+		while (s1[i] != '\0')
+		{
+			cpy[i] = s1[i];
+			i++;
+		}
+		cpy[i] = '\0';
+		return (cpy);
+	}
+	else
+		return (0);
 }

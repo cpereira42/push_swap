@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   extra.c                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpereira <cpereira@student.42sp.org>       +#+  +:+       +#+        */
+/*   By: cpereira <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/15 18:18:03 by cpereira          #+#    #+#             */
-/*   Updated: 2021/07/23 19:27:43 by cpereira         ###   ########.fr       */
+/*   Created: 2020/01/20 22:58:35 by cpereira          #+#    #+#             */
+/*   Updated: 2020/01/25 18:58:14 by cpereira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-void	bye(t_all *all)
+void	ft_bzero(void *s, int tamanho)
 {
-	int	i;
+	int		i;
+	char	*frase;
 
+	frase = s;
 	i = 0;
-	free(all->vector_a);
-	free(all->vector_o);
-	if (all->vector_b)
-		free(all->vector_b);
-	exit(0);
+	if (tamanho > 0)
+	{
+		while (i < tamanho)
+		{
+			if (i < tamanho)
+				frase[i] = '\0';
+			i++;
+		}
+	}
 }
